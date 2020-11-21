@@ -3,8 +3,10 @@ import cocos
 
 class Planet(cocos.sprite.Sprite):
     def __init__(self, x, y):
-        # super(Planet, self).__init__(image="assets/planet.png", position=(x, y))
-        super(Planet, self).__init__(image="assets/images/planet_icon/Ice.png", position=(x, y))
+        super(Planet, self).__init__(image="assets/planet.png", position=(x, y))
+        # super(Planet, self).__init__(image="assets/images/planet_icon/Ice.png", position=(x, y))
+
+        self.radius = self.width / 2
 
         self.creatures = []
 

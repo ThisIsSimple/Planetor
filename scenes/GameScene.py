@@ -17,14 +17,11 @@ class GameLayer(cocos.layer.Layer):
     def __init__(self):
         super(GameLayer, self).__init__()
 
-        planet = Planet(320, 200)
+        planet = Planet(320, -900)
         self.add(planet)
 
         self.player = Player(planet)
         self.add(self.player)
-
-        self.text_label = cocos.text.Label("test")
-        self.add(self.text_label)
 
         self.schedule(self.update)
 

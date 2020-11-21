@@ -30,7 +30,7 @@ class TitleLayer(cocos.layer.Layer):
         self.menu_items.append(self.quit_label)
         self.add(self.quit_label)
 
-        self.planet = cocos.sprite.Sprite(image="assets/planet.png", position=(320, -947), color=(100, 255, 100))
+        self.planet = cocos.sprite.Sprite(image="assets/planet.png", position=(320, -947), color=(44, 130, 42))
         self.planet.do(Repeat(Rotate(10, 5)))
         self.add(self.planet)
 

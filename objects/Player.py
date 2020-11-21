@@ -9,11 +9,14 @@ class Player(Creature):
     KEY_PRESSED = defaultdict(int)
 
     def __init__(self, planet):
-        super(Player, self).__init__(planet)
+        super(Player, self).__init__(planet, 100, 100)
 
         self.speed = 50
 
     def move(self, angle, distance):
+
+
+
         pass
 
     def update(self, elapsed):
@@ -26,3 +29,6 @@ class Player(Creature):
         self.y += movement2 * elapsed * self.speed
         self.update_angle()
 
+    def gravity(self):
+
+        pass
