@@ -6,7 +6,7 @@ import pyglet
 
 
 class TitleLayer(cocos.layer.Layer):
-    is_event_handler=True
+    is_event_handler = True
 
     def __init__(self):
         super(TitleLayer, self).__init__()

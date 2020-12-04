@@ -1,13 +1,10 @@
 import cocos
-from cocos import draw
-import cocos.collision_model as cm
-from scenes.TitleScene import TitleLayer
+
+import scenes.GameScene as GameScene
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    director = cocos.director.director
-    director.init(caption='Planetor', width=640, height=480)
+if __name__ == "__main__":
+    cocos.director.director.init(caption="Planetor")
 
-    titleScene = cocos.scene.Scene(TitleLayer())
-    director.run(titleScene)
+    scene = cocos.scene.Scene(GameScene.GameLayer())
+    cocos.director.director.run(scene)

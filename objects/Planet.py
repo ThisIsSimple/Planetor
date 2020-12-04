@@ -1,21 +1,24 @@
 import cocos
 
+import pymunk
+
+import statics.TAG as TAG
+
 
 class Planet(cocos.sprite.Sprite):
-    def __init__(self, x, y):
-        super(Planet, self).__init__(image="assets/planet.png", position=(x, y))
-        # super(Planet, self).__init__(image="assets/images/planet_icon/Ice.png", position=(x, y))
+    def __init__(self, gravity=100, scale=1):
+        super(Planet, self).__init__("assets/Lava.png")
+
+        self.gravity = gravity
+        self.scale = scale
 
         self.radius = self.width / 2
 
-        self.creatures = []
+        self.body = pymunk.Body(body_type=pymunk.Body.STATIC)
+        self.body.position = self.position = (320, 240)
 
-        self.schedule(self.update)
+        self.shape = pymunk.Circle(self.body, self.width / 2)
+        self.shape.collision_type = TAG.PLANET
 
-    def update(self, dt):
-        pass
-
-    def set_creatures_position(self):
-        for creature in self.creatures:
-            pass
-
+    def update(self, elapsed):
+        self.position = self.body.position

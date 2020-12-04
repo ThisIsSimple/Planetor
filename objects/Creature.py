@@ -1,30 +1,28 @@
+from objects.Object import Object
+
 import cocos
-import math
+import cocos.euclid as eu
+from math import sqrt, degrees, radians, atan, sin, cos
+
+import pymunk
+
+import statics.TAG as TAG
 
 
-class Creature(cocos.sprite.Sprite):
-    def __init__(self, planet, x, y, gravity=True):
-        super(Creature, self).__init__(image="assets/box.png")
+class Creature(Object):
 
-        self.planet = planet
+    def __init__(self, planet, image, gravity=True, angle=0, distance=0, collision_type=TAG.CREATURE):
+        super(Creature, self).__init__(planet=planet, image=image, gravity=gravity, angle=angle, distance=distance, collision_type=collision_type)
 
-        self.position = (320, 300)
-        self.gravity = gravity
+    def move(self, angle, elapsed):
+        angle = -1 * radians(angle) * elapsed
 
-        self.update_angle()
+        x = self.x - self.planet.x
+        y = self.y - self.planet.y
+        rotate = (
+            x * cos(angle) - y * sin(angle),
+            x * sin(angle) + y * cos(angle)
+        )
+        new_pos = (self.planet.x + rotate[0], self.planet.y + rotate[1])
 
-    def move(self, angle, distance):
-        pass
-
-    def update(self, elapsed):
-        if self.gravity:
-            if self.get_distance() > self.planet.radius:
-                pass
-        pass
-
-    def update_angle(self):
-        tan = (self.planet.x - self.x) / (self.planet.y - self.y)
-        self.rotation = math.degrees(math.atan(tan))
-
-    def get_distance(self):
-        return math.sqrt(math.pow((self.planet.x - self.x), 2) + math.pow((self.planet.y - self.y), 2))
+        self.body.position = new_pos
