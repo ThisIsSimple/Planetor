@@ -49,7 +49,6 @@ class Player(Creature):
             self.move(30 * movement, elapsed)
         if jump:
             if self.on_ground and not self.jumping:
-                print("Jump")
                 self.body.apply_impulse_at_local_point(
                     (self.center_direction[0] * -1 * self.jump_force, self.center_direction[1] * -1 * self.jump_force),
                     (0, 0))

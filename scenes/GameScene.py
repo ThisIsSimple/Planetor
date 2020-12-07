@@ -4,6 +4,7 @@ from math import sqrt, degrees, radians, atan, sin, cos
 
 from objects.Planet import Planet
 from objects.Object import Object
+from objects.Building import Building
 from objects.Player import Player
 
 import pymunk
@@ -27,6 +28,13 @@ class GameLayer(cocos.layer.Layer):
         Player.KEY_PRESSED[k] = 0
 
     def collide_with_building(self, arbiter, space, data):
+        self.building_name_label.element.text = arbiter.shapes[1].object.name
+        arbiter.shapes[1].object.show_name()
+        return False
+
+    def collide_end_building(self, arbiter, space, data):
+        self.building_name_label.element.text = ""
+        arbiter.shapes[1].object.hide_name()
         return False
 
     def collide_with_planet(self, arbiter, space, data):
@@ -39,23 +47,56 @@ class GameLayer(cocos.layer.Layer):
         self.space = pymunk.Space()
         self.space.gravity = (0, 0)
 
+        # Collision Setting
         self.ch1 = self.space.add_collision_handler(TAG.PLAYER, TAG.BUILDING)
         self.ch1.begin = self.collide_with_building
+        self.ch1.separate = self.collide_end_building
 
         self.ch2 = self.space.add_collision_handler(TAG.PLAYER, TAG.PLANET)
         self.ch2.begin = self.collide_with_planet
 
-        p = Planet(scale=3)
-        self.add(p)
-        self.space.add(p.body, p.shape)
+        # UI 화면 중심 좌표를 기준으로 위치 지정
+        self.UI_objects = []
 
-        self.t = Object(planet=p, image="assets/house.png", angle=45, collision_type=TAG.BUILDING)
-        self.add(self.t)
-        self.space.add(self.t.body, self.t.shape)
+        self.planet_name_label = cocos.text.RichLabel("Planet Name", anchor_x="center", font_size=12)
+        self.UI_objects.append({
+            'position': (0, -215),
+            'object': self.planet_name_label
+        })
 
-        self.player = Player(p)
-        self.add(self.player)
-        self.space.add(self.player.body, self.player.shape)
+        self.building_name_label = cocos.text.RichLabel("_", anchor_x="center", font_size=11)
+        self.building_name_label.element.text = ""
+        self.UI_objects.append({
+            'position': (0, 215),
+            'object': self.building_name_label
+        })
+
+        self.tooltip_label = cocos.text.RichLabel("", anchor_x="right", font_size=10)
+        self.UI_objects.append({
+            'position': (300, -215),
+            'object': self.tooltip_label
+        })
+
+        # Planet & Creatures & Buildings
+        self.updateable_objects = []
+
+        p = Planet(image="assets/Lava.png", name="화산 행성", scale=3)
+        self.updateable_objects.append(p)
+
+        self.t = Building(planet=p, image="assets/house.png", name="촌장의 집", angle=45, collision_type=TAG.BUILDING)
+        self.updateable_objects.append(self.t)
+
+        self.player = Player(planet=p)
+        self.updateable_objects.append(self.player)
+
+        # Add Updateable Objects
+        for item in self.updateable_objects:
+            self.add(item)
+            self.space.add(item.body, item.shape)
+
+        # Add UI Objects
+        for item in self.UI_objects:
+            self.add(item['object'], z=100)
 
         self.schedule(self.update)
 
@@ -65,5 +106,12 @@ class GameLayer(cocos.layer.Layer):
         self.camera.center = eu.Point3(self.player.position[0], self.player.position[1], 0)
         self.camera.eye = eu.Point3(self.player.position[0], self.player.position[1], self.camera.eye[2])
 
-        for child in self.children:
-            child[1].update(dt)
+        self.update_ui_position()
+
+        for child in self.updateable_objects:
+            child.update(dt)
+
+    def update_ui_position(self):
+        for item in self.UI_objects:
+            item['object'].position = (self.camera.center[0] + item['position'][0],
+                                       self.camera.center[1] + item['position'][1])

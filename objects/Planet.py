@@ -6,9 +6,10 @@ import statics.TAG as TAG
 
 
 class Planet(cocos.sprite.Sprite):
-    def __init__(self, gravity=100, scale=1):
-        super(Planet, self).__init__("assets/Lava.png")
+    def __init__(self, image, name, gravity=100, scale=1):
+        super(Planet, self).__init__(image)
 
+        self.name = name
         self.gravity = gravity
         self.scale = scale
 
