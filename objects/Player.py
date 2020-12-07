@@ -11,8 +11,8 @@ from statics import TAG
 class Player(Creature):
     KEY_PRESSED = defaultdict(int)
 
-    def __init__(self, planet, image="assets/box.png", gravity=True, angle=0, distance=0, collision_type=TAG.PLAYER):
-        super(Creature, self).__init__(planet=planet, image=image, gravity=gravity, angle=angle, distance=distance,
+    def __init__(self, planet, image="assets/images/box.png", name="주인공", gravity=True, angle=0, distance=0, collision_type=TAG.PLAYER):
+        super(Creature, self).__init__(planet=planet, image=image, name=name, gravity=gravity, angle=angle, distance=distance,
                                        collision_type=collision_type)
 
         self.move_speed = 50

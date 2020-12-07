@@ -41,6 +41,9 @@ class GameLayer(cocos.layer.Layer):
         arbiter.shapes[0].object.on_ground = True
         return True
 
+    def collide_between_building(self, arbiter, space, data):
+        return False
+
     def __init__(self):
         super(GameLayer, self).__init__()
 
@@ -55,23 +58,26 @@ class GameLayer(cocos.layer.Layer):
         self.ch2 = self.space.add_collision_handler(TAG.PLAYER, TAG.PLANET)
         self.ch2.begin = self.collide_with_planet
 
+        self.ch3 = self.space.add_collision_handler(TAG.BUILDING, TAG.BUILDING)
+        self.ch3.begin = self.collide_between_building
+
         # UI 화면 중심 좌표를 기준으로 위치 지정
         self.UI_objects = []
 
-        self.planet_name_label = cocos.text.RichLabel("Planet Name", anchor_x="center", font_size=12)
+        self.planet_name_label = cocos.text.Label("Planet Name", anchor_x="center", font_size=12)
         self.UI_objects.append({
             'position': (0, -215),
             'object': self.planet_name_label
         })
 
-        self.building_name_label = cocos.text.RichLabel("_", anchor_x="center", font_size=11)
+        self.building_name_label = cocos.text.Label("_", anchor_x="center", font_size=11)
         self.building_name_label.element.text = ""
         self.UI_objects.append({
             'position': (0, 215),
             'object': self.building_name_label
         })
 
-        self.tooltip_label = cocos.text.RichLabel("", anchor_x="right", font_size=10)
+        self.tooltip_label = cocos.text.Label("", anchor_x="right", font_size=10)
         self.UI_objects.append({
             'position': (300, -215),
             'object': self.tooltip_label
@@ -80,11 +86,26 @@ class GameLayer(cocos.layer.Layer):
         # Planet & Creatures & Buildings
         self.updateable_objects = []
 
-        p = Planet(image="assets/Lava.png", name="화산 행성", scale=3)
+        p = Planet(image="assets/images/planets/Baren.png", name="화산 행성", scale=0.3)
         self.updateable_objects.append(p)
 
-        self.t = Building(planet=p, image="assets/house.png", name="촌장의 집", angle=45, collision_type=TAG.BUILDING)
-        self.updateable_objects.append(self.t)
+        k = Planet(image="assets/images/planets/Ice.png", name="물 행성", scale=0.5, position=(400, 300))
+        self.updateable_objects.append(k)
+
+        self.updateable_objects.append(
+            Building(planet=p, image="assets/images/Tree.png", name="촌장의 집", angle=45))
+
+        self.updateable_objects.append(
+            Building(planet=p, image="assets/images/House1.png", name="촌장의 집", angle=30))
+
+        self.updateable_objects.append(
+            Building(planet=p, image="assets/images/House3.png", name="촌장의 집", angle=10))
+
+        self.updateable_objects.append(
+            Building(planet=p, image="assets/images/Spaceship.png", name="우주선", angle=90))
+
+        self.updateable_objects.append(
+            Building(planet=p, image="assets/images/Factory.png", name="우주선", angle=-20, distance=0))
 
         self.player = Player(planet=p)
         self.updateable_objects.append(self.player)

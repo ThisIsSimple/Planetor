@@ -23,9 +23,12 @@ class Object(cocos.sprite.Sprite):
 
         return image
 
-    def __init__(self, planet, image, gravity=False, angle=0, distance=0, collision_type=TAG.OBJECT):
+    def __init__(self, planet, image, name="", scale=1, gravity=False, angle=0, distance=0, collision_type=TAG.OBJECT):
 
         super(Object, self).__init__(image)
+
+        self.name = name
+        self.scale = scale
 
         self.center_direction = (0, 0)
         self.planet = planet

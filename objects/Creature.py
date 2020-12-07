@@ -11,10 +11,11 @@ import statics.TAG as TAG
 
 class Creature(Object):
 
-    def __init__(self, planet, image, gravity=True, angle=0, distance=0, collision_type=TAG.CREATURE):
-        super(Creature, self).__init__(planet=planet, image=image, gravity=gravity, angle=angle, distance=distance, collision_type=collision_type)
+    def __init__(self, planet, image, name, gravity=True, angle=0, distance=0, collision_type=TAG.CREATURE):
+        super(Creature, self).__init__(planet=planet, image=image, name=name, gravity=gravity, angle=angle, distance=distance, collision_type=collision_type)
 
-    def move(self, angle, elapsed):
+    def move(self, speed, elapsed):
+        angle = speed * 100 / self.planet.radius
         angle = -1 * radians(angle) * elapsed
 
         x = self.x - self.planet.x
