@@ -1,7 +1,8 @@
 repo_name: ThisIsSimple/Planetor
 report_id: 96de7268122b7239609202f556797faf
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-30T18:27:07+00:00'
+timestamp: '2024-01-05T08:29:49+00:00'
 requested_by: ThisIsSimple
 provider: github
 branch: master
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/ThisIsSimple/Planetor
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -25,6 +27,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/ThisIsSimple/Planetor
   detection_source: Repo Metadata
 - name: PyPI
   description: A repository of software for the Python programming language
@@ -34,6 +37,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Hosted Package Repository
   image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -47,7 +51,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/4837/py.jpg
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -59,6 +63,7 @@ tools:
   category: Assets and Media
   sub_category: Image Processing and Management
   image_url: https://img.stackshare.io/service/2375/default_1f67b0ca7416a9f52beb655f90b5602d5ef74b75.jpg
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -73,7 +78,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19832/default_58dbe7b4d7ec447b62773209af0f9a31bbabf5bd.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -84,18 +89,18 @@ tools:
     detected_date: Sep 23
     severity: critical
     first_patched: 3.1.13
-  - name: Path Traversal in Django
-    cve_id: CVE-2021-31542
-    cve_url: https://github.com/advisories/GHSA-rxjp-mfm9-w4wr
-    detected_date: Aug 22
-    severity: high
-    first_patched: 3.1.9
   - name: Potential bypass of an upstream access control based on URL paths in Django
     cve_id: CVE-2021-44420
     cve_url: https://github.com/advisories/GHSA-v6rh-hp5x-86rv
     detected_date: Dec 14
     severity: high
     first_patched: 3.1.14
+  - name: Path Traversal in Django
+    cve_id: CVE-2021-31542
+    cve_url: https://github.com/advisories/GHSA-rxjp-mfm9-w4wr
+    detected_date: Aug 22
+    severity: high
+    first_patched: 3.1.9
   - name: Directory Traversal in Django
     cve_id: CVE-2021-28658
     cve_url: https://github.com/advisories/GHSA-xgxc-v2qg-chmh
@@ -117,6 +122,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20338/default_53bf9855f0e48ff0ff9a86525b6cf27f25cb5007.png
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -130,7 +136,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20739/default_88a4948f616ae7ccb7210803d2bd72b72851b6e9.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -144,7 +150,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20125/default_63b818b0ea63c702db9131c12dd2fd2fad35ca3b.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -158,7 +164,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19849/default_75c38a39b9f0062814489e2ec2cbfca0ca15d9ba.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -185,7 +191,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19909/default_67f813d4aac73d024261bcfded6ef2b918e384a0.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -199,7 +205,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19845/default_accee5d2b8ed75c2245f13504daf75b1cbc8cc9f.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -213,7 +219,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20117/default_9cf91bfbbfb266fc12a914cdc09d9e4b55c773bb.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -227,7 +233,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20270/default_8197520bb021ab2bc2cb991350ef948366688c94.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -241,7 +247,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20323/default_cafc15de82628e6c121e1ea9ce941c1410268b49.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -255,7 +261,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20072/default_d7fc4eabe57370d13c2a8ad2f7f6bb876c96c66d.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -269,7 +275,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20301/default_1801c4854c9a56a25ccd7b33a13647a1e901ed84.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -283,7 +289,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19841/default_bb711fa267b2329ed689711a5adb7d9e74610b20.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -297,7 +303,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19827/default_74a61b43bdb9fc0cba2978316b9976f43545029b.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -311,7 +317,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20039/default_a7a70921d2d3189665c78015850dc968f41705a1.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -340,7 +346,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19912/default_bc82f0b22ca8fd942e21c317967f4ab61f43eb2c.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
@@ -354,7 +360,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19946/default_0b0a94e1bdf3e64deeccb23892ca2335bdc30e4f.png
-  detection_source_url: github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
+  detection_source_url: https://github.com/ThisIsSimple/Planetor/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: JuniorEinstein
   last_updated_on: 2020-12-04 06:05:14.000000000 Z
