@@ -28,7 +28,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [ThisIsSimple/Planetor](https://github.com/ThisIsSimple/Planetor)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|22<br/>Tools used|11/30/23 <br/>Report generated|
+|22<br/>Tools used|01/05/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -94,7 +94,7 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[Django](https://pypi.org/project/Django)|v3.1.4|12/04/20|JuniorEinstein |BSD-3-Clause|[CVE-2021-35042](https://github.com/advisories/GHSA-xpfp-f569-q3p2) (Critical)<br/>[CVE-2021-31542](https://github.com/advisories/GHSA-rxjp-mfm9-w4wr) (High)<br/>[CVE-2021-44420](https://github.com/advisories/GHSA-v6rh-hp5x-86rv) (High)<br/>[CVE-2021-28658](https://github.com/advisories/GHSA-xgxc-v2qg-chmh) (Moderate)<br/>[CVE-2021-32052](https://github.com/advisories/GHSA-qm57-vhq3-3fwf) (Moderate)|
+|[Django](https://pypi.org/project/Django)|v3.1.4|12/04/20|JuniorEinstein |BSD-3-Clause|[CVE-2021-35042](https://github.com/advisories/GHSA-xpfp-f569-q3p2) (Critical)<br/>[CVE-2021-44420](https://github.com/advisories/GHSA-v6rh-hp5x-86rv) (High)<br/>[CVE-2021-31542](https://github.com/advisories/GHSA-rxjp-mfm9-w4wr) (High)<br/>[CVE-2021-28658](https://github.com/advisories/GHSA-xgxc-v2qg-chmh) (Moderate)<br/>[CVE-2021-32052](https://github.com/advisories/GHSA-qm57-vhq3-3fwf) (Moderate)|
 |[PyOpenGL](https://pypi.org/project/PyOpenGL)|N/A|12/04/20|JuniorEinstein |BSD-3-Clause|N/A|
 |[asgiref](https://pypi.org/project/asgiref)|v3.3.1|12/04/20|JuniorEinstein |BSD-3-Clause|N/A|
 |[astroid](https://pypi.org/project/astroid)|v2.4.2|12/04/20|JuniorEinstein |LGPL-2.1|N/A|
